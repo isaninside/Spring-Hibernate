@@ -1,5 +1,6 @@
 package id.ac.pcr.springhibernate.service;
 
+import id.ac.pcr.springhibernate.model.Dosen;
 import id.ac.pcr.springhibernate.model.Mahasiswa;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,5 +29,14 @@ public class PendaftaranService {
 
     public List<Mahasiswa> getAllMahasiswa(){
            return entityManager.createQuery("SELECT o FROM Mahasiswa o").getResultList();
+    }
+
+    @Transactional
+    public void insertDosen(Dosen d) {
+        entityManager.persist(d);
+    }
+
+    public  List<Dosen> getAllDosen() {
+        return entityManager.createQuery("SELECT o FROM Dosen o").getResultList();
     }
 }

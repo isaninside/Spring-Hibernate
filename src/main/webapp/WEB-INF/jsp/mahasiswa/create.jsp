@@ -2,22 +2,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <div class="content">
-    <c:url value="/dosen" var="dosen_url"/>
+    <c:url value="/mahasiswa" var="mahasiswa_url"/>
 
-    <form:form action="${dosen_url}" method="POST" modelAttribute="dosen" id="dosenForm">
+    <form:form action="${mahasiswa_url}" method="POST" modelAttribute="mhs" id="mahasiswaForm">
     <div class="blocksection">
         <div class="blockcontent">
             <h3>Insert New Dosen </h3>
             <dl class="form-text">
                 <dt>
-                    <label for="nip">NIP :</label>
+                    <label for="nim">NIM :</label>
                 </dt>
                 <dd>
 
-                    <form:input path="niy" id="nip"/>
+                    <form:input path="nim" id="nim"/>
 
                     <form:errors delimiter="&lt;p/&gt;" cssClass="boxinfo error"
-                                 path="niy"/>
+                                 path="nim"/>
                     <p class="description">Required.</p>
                 </dd>
             </dl>
@@ -38,7 +38,7 @@
     </div>
     <div class="form-button">
         <div class="buttonWrapper">
-            <a href="<c:url value='/dosen'/>" class="back">Back</a>
+            <a href="<c:url value='/mahasiswa'/>" class="back">Back</a>
         </div>
         <input type="submit" value="Save" name="submit_1" id="submit_1"/>
         <input class="grey" type="reset" value="Clear" name="reset_1" id="reset_1"/>

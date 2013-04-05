@@ -8,23 +8,23 @@
         <table cellpadding="0" cellspacing="0" border="1" class="display" id="datatables" width="800px">
             <thead>
             <tr>
-                <th>NIY</th>
+                <th>NIM</th>
                 <th>Nama</th>
                 <th style="width:150px;">Action</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${data}" var="dosen">
+            <c:forEach items="${data}" var="mhs">
                 <tr>
-                    <td>${dosen.niy}</td>
-                    <td>${dosen.nama}</td>
+                    <td>${mhs.nim}</td>
+                    <td>${mhs.nama}</td>
                     <td>
                         <div class="buttonWrapper">
-                            <a href="<c:url value='/dosen/${dosen.id}' />" class="view">View
+                            <a href="<c:url value='/mahasiswa/${mhs.id}' />" class="view">View
                             </a>
-                            <a href="<c:url value='/dosen/${dosen.id}/edit' />" class="edit">Edit</a>
+                            <a href="<c:url value='/mahasiswa/${mhs.id}/edit' />" class="edit">Edit</a>
                             <a onclick="return confirm('Apakah anda Yakin ?')"
-                               href="<c:url value='/dosen/${dosen.id}/delete' />"
+                               href="<c:url value='/mahasiswa/${mhs.id}/delete' />"
                                class="delete">Delete</a>
                         </div>
                     </td>
@@ -35,7 +35,7 @@
             <tr>
                 <td colspan="7">
                     <div class="buttonWrapper">
-                        <a href="<c:url value='/dosen/new' />" class="view">Create</a>
+                        <a href="<c:url value='/mahasiswa/new' />" class="view">Create</a>
                     </div>
                 </td>
             </tr>

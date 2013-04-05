@@ -11,8 +11,15 @@
 
     <context:component-scan base-package="id.ac.pcr.springhibernate.web.controller"/>
 
+    <context:component-scan base-package="id.ac.pcr.springhibernate.web.controller"/>
+    <context:component-scan base-package="id.ac.pcr.springhibernate.api.controller"/>
 
     <!-- Configures the @Controller programming model -->
+    <mvc:annotation-driven>
+        <mvc:argument-resolvers>
+            <bean class="org.springframework.data.web.PageableArgumentResolver"></bean>
+        </mvc:argument-resolvers>
+    </mvc:annotation-driven>
     <mvc:annotation-driven/>
 
     <!-- mengganti default servletnya Tomcat dan Jetty -->
